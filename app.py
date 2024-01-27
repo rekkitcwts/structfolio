@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def home():
-    return "Homepage"
+    return "Under Construction!"
 
 @app.route('/contact', methods=['GET'])
 def contact():
