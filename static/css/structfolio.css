@@ -3,3 +3,10 @@
 
     background-color: #CD2E3A;
 }
+
+/* Modify brand and text color */
+.navbar-nkred-bg .navbar-brand,
+.navbar-nkred-bg .navbar-text {
+
+    color: #FFFFFF;
+}
