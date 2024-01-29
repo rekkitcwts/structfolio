@@ -6,7 +6,8 @@
 
 /* Modify brand and text color */
 .navbar-nkred-bg .navbar-brand,
-.navbar-nkred-bg .navbar-text, .navbar-nkred-bg .navbar-item {
-
+.navbar-nkred-bg .navbar-text, .navbar-light .navbar-nav .nav-link {
     color: #FFFFFF;
 }
+
+#navbarNavDropdown > ul > li:nth-child(2) > a
