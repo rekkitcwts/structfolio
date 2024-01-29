@@ -10,3 +10,8 @@
     color: #FFFFFF;
 }
 
+/* H1 - header with colored background */
+.parallel-header {
+	background-color: #0047A0;
+	color: #FFFFFF;
+}
