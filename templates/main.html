@@ -159,6 +159,7 @@
 			    <div class="col-lg-12">
 				<!-- bypass flask detecting curlies as Flask instead of Vue - use VueJS or React for the screenshot pop-up, with an option for the user to view a live demo -->
 					<h1 class="text-center parallel-header"><span class="parallel-header-text">Portfolio</span></h1>
+<<<<<<< HEAD
 					
 					<div class="coverflow">
   <div class="image" song="1">
@@ -202,6 +203,8 @@
   </div>
 </div>				
 					
+=======
+>>>>>>> parent of 50defc6 (Experimental - added coverflow for portfolio)
 				</div><!-- end portfolio col -->
 </div><!-- end portfolio row -->
 	
@@ -213,25 +216,9 @@
 </div><!-- end contact row -->
 {% endblock %}
 
-{% block bsscripts %}
-<script>
-	var initSong = 7;
-var songs = [
-  {artist: "Lil Data", song: "Burnnn", album: "Folder Dot Zip"},
-  {artist: "BROCKHAMPTON", song: "1997 DIANA", album: "1997 DIANA"},
-  {artist: "KRANE, Portrait", song: "Italics", album: "Italics"},
-  {artist: "Left At London", song: "Revolution Lover", album: "Transgender Street Legend, Vol.1"},
-  {artist: "Foals", song: "Exits", album: "Everything Not Saved Will Be Lost: Part 1"},
-  {artist: "Austin Weber", song: "Using the Internet for French", album: "Using the Internet for French"},
-  {artist: "Phillipi & Rodrigo", song: "Retrogrado", album: "Paciencia"},
-	{artist: "Holograph, Shadient", song: "Adé", album: "Adé"},
-  {artist: "gasoiid", song: "s0-n2u", album: "s0-n2u"},
-  {artist: "Ted Striker", song: "Love Is Gonna Make Us Stronger (Theme from Retry)", album: "Retry Original Soundtrack"},
-  {artist: "Travis Bickle", song: "Off My Rocker", album: "Bickle Binch Forever"},
-  {artist: "Grynpyret", song: "I Forgive", album: "I Forgive"},
-  {artist: "Virtual Self", song: "ANGEL VOICES", album: "ANGEL VOICES"}
-];
+{% block vuescripts %}
 
+<<<<<<< HEAD
 var songTotal = $(".coverflow .image").length;
 
 function changeSong(number)
@@ -276,4 +263,6 @@ $(".image").click(function(){changeSong($(this).attr("song").value);})
 
 changeSong(initSong);
 </script>
+=======
+>>>>>>> parent of 50defc6 (Experimental - added coverflow for portfolio)
 {% endblock %}
