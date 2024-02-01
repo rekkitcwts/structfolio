@@ -220,7 +220,8 @@ var songs = [
 
 var songTotal = $(".coverflow .image").length;
 
-function changeSong(number){
+function changeSong(number)
+{
   $(".image[song="+number+"], .image[song="+number+"] img").removeAttr("style");
   for(i = 1; i <= songTotal - number; i++){
     $(".image[song="+ (number + i) +"] img").css("transform", "perspective(500px) translate3d("+ 80 * i +"%, 0, -"+ 25 * i +"px) rotateY(-"+ (65 + (5 * (i-1))) +"deg)");
