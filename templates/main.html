@@ -154,6 +154,40 @@
 			    <div class="col-lg-12">
 				<!-- bypass flask detecting curlies as Flask instead of Vue - use VueJS or React for the screenshot pop-up, with an option for the user to view a live demo -->
 					<h1 class="text-center parallel-header"><span class="parallel-header-text">Portfolio</span></h1>
+					
+					<div class="coverflow">
+  <div class="image" song="1">
+    <img src="https://i.scdn.co/image/c5dac83284bd0e760d2ce9b0623c667d0863b4e2">
+  </div>
+  <div class="image" song="2">
+    <img src="https://i.scdn.co/image/12e2cd58a5d1a0b64a1aeaaab6db66abcbea26eb">
+  </div>
+  <div class="image" song="3">
+    <img src="https://i.scdn.co/image/91ca29e48b83cc491e7d026deb93018941ac2734">
+  </div>
+  <div class="image" song="4">
+    <img src="https://i.scdn.co/image/09073998e07bc723e8a6c70b5f9bbb046578de12">
+  </div>
+  <div class="image" song="5">
+    <img src="https://i.scdn.co/image/808e975865b3f01d6157cf817a883591acd3441f">
+  </div>
+  <div class="image" song="6">
+    <img src="https://i.scdn.co/image/0baf876e0498fa8703ab8b15d0602c39f89e48f2">
+  </div>
+  <div class="image" song="7">
+    <img src="https://i.scdn.co/image/a8d5a7801ba2caf8d5f94f185c21ab67db991e54">
+  </div>
+  <div class="image" song="8">
+    <img src="https://i1.sndcdn.com/artworks-000188401497-ofxjee-t500x500.jpg">
+  </div>
+  <div class="image" song="9">
+    <img src="https://i1.sndcdn.com/artworks-000477446841-wnjkiq-t500x500.jpg">
+  </div>
+  <div class="image" song="10">
+    <img src="https://i1.sndcdn.com/artworks-000195341328-6nu3ay-t500x500.jpg">
+					
+					
+					
 				</div><!-- end portfolio col -->
 </div><!-- end portfolio row -->
 	
@@ -165,6 +199,66 @@
 </div><!-- end contact row -->
 {% endblock %}
 
-{% block vuescripts %}
+{% block bsscripts %}
+<script>
+	var initSong = 7;
+var songs = [
+  {artist: "Lil Data", song: "Burnnn", album: "Folder Dot Zip"},
+  {artist: "BROCKHAMPTON", song: "1997 DIANA", album: "1997 DIANA"},
+  {artist: "KRANE, Portrait", song: "Italics", album: "Italics"},
+  {artist: "Left At London", song: "Revolution Lover", album: "Transgender Street Legend, Vol.1"},
+  {artist: "Foals", song: "Exits", album: "Everything Not Saved Will Be Lost: Part 1"},
+  {artist: "Austin Weber", song: "Using the Internet for French", album: "Using the Internet for French"},
+  {artist: "Phillipi & Rodrigo", song: "Retrogrado", album: "Paciencia"},
+	{artist: "Holograph, Shadient", song: "Adé", album: "Adé"},
+  {artist: "gasoiid", song: "s0-n2u", album: "s0-n2u"},
+  {artist: "Ted Striker", song: "Love Is Gonna Make Us Stronger (Theme from Retry)", album: "Retry Original Soundtrack"},
+  {artist: "Travis Bickle", song: "Off My Rocker", album: "Bickle Binch Forever"},
+  {artist: "Grynpyret", song: "I Forgive", album: "I Forgive"},
+  {artist: "Virtual Self", song: "ANGEL VOICES", album: "ANGEL VOICES"}
+];
 
+var songTotal = $(".coverflow .image").length;
+
+function changeSong(number){
+  $(".image[song="+number+"], .image[song="+number+"] img").removeAttr("style");
+  for(i = 1; i <= songTotal - number; i++){
+    $(".image[song="+ (number + i) +"] img").css("transform", "perspective(500px) translate3d("+ 80 * i +"%, 0, -"+ 25 * i +"px) rotateY(-"+ (65 + (5 * (i-1))) +"deg)");
+    $(".image[song="+ (number + i) +"]").css("z-index", "-"+i);
+  }
+  for(i = -1; i >= -(number)+1; i--){
+    $(".image[song="+ (number + i) +"] img").css("transform", "perspective(500px) translate3d("+ 80 * i +"%, 0, "+ 25 * i +"px) rotateY("+ (65 + (5 * -(i+1))) +"deg)");
+    $(".image[song="+ (number + i) +"]").css("z-index", i);
+  }
+  $(".info .title h1").text(songs[number - 1].song);
+  $(".info .title p").text(songs[number - 1].artist + " - " + songs[number - 1].album);
+  if(number < 1){
+    currentSong = 1;
+  }else if(number > songTotal){
+    currentSong = songTotal;
+  }else{
+    currentSong = number;
+  }
+}
+
+$(".info .controls .left").click(function(){
+  if(currentSong === 1){
+    changeSong(currentSong);
+  }else{
+    changeSong(currentSong - 1);
+  }
+})
+
+$(".info .controls .right").click(function(){
+  if(currentSong === songTotal){
+    changeSong(songTotal);
+  }else{
+    changeSong(currentSong + 1);
+  }
+})
+
+$(".image").click(function(){changeSong($(this).attr("song").value);})
+
+changeSong(initSong);
+</script>
 {% endblock %}
