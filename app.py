@@ -33,7 +33,7 @@ def create_first_admin():
         session.commit()
         return "Create default admin creds here"
 
-@app.route('api/admin/login', methods=['POST'])
+@app.route('/api/admin/login', methods=['POST'])
 def api_admin_login():
     return "JSON with token"
 
