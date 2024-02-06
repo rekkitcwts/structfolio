@@ -20,9 +20,8 @@ session = Session()
 
 @app.route('/admin/start', methods=['GET'])
 def create_first_admin():
-    stmt = select(User)
-    result = session.execute(stmt)
-    return result
+    count = session.query(func.count(User.id)).scalar()
+    return count
 
 @app.route('/admin/login', methods=['GET'])
 def admin_login():
