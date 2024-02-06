@@ -1,7 +1,10 @@
 from app import db
 from sqlalchemy import func, select
+from sqlalchemy.orm import declarative_base
 
-class Project(db.Model):
+Base = declarative_base()
+
+class Project(Base):
     __tablename__ = "projects"
     
     id = db.Column(db.Integer,     nullable=False, unique=True, primary_key=True)
