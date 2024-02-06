@@ -2,6 +2,7 @@ from app import db
 from sqlalchemy import *
 from sqlalchemy.orm import declarative_base
 from passlib.apps import custom_app_context as pwd_context
+import jwt
 
 Base = declarative_base()
 
@@ -29,3 +30,15 @@ class User(Base):
     
     def verify_password(self, password):
         return pwd_context.verify(password, self.passhash)
+    
+    def generate_auth_token(self, expires_in=600):
+        return jwt.encode({'id': self.id, 'exp': time.time() + expires_in}, app.config['SECRET_KEY'], algorithm='HS256')
+        
+    @staticmethod
+    def verify_auth_token(token):
+        try:
+            data = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
+        except:
+            return
+        return User.query.get(data['id'])
+        
