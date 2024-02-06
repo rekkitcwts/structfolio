@@ -6,7 +6,7 @@ from sqlalchemy import func, exc, create_engine
 
 app = Flask(__name__)
 #db = SQLAlchemy()
-connection_str = f'postgres://postgres.xgmzxcdyetduyrypqbhh:RaymanIsAwesome123@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres'
+connection_str = f'postgresql://postgres.xgmzxcdyetduyrypqbhh:RaymanIsAwesome123@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres'
 db = create_engine(connection_str)
 #db_name = "Buford.db"
 #app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///'+db_name
