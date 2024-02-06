@@ -33,9 +33,13 @@ def create_first_admin():
         session.commit()
         return "Create default admin creds here"
 
+@app.route('api/admin/login', methods=['POST'])
+def api_admin_login():
+    return "JSON with token"
+
 @app.route('/admin/login', methods=['GET'])
 def admin_login():
-    return render_template('login.html', title="Portfolio Management")
+    return render_template('login.html', title="Portfolio Management Login")
 	
 @app.route('/admin', methods=['GET'])
 def admin_projects_list():
