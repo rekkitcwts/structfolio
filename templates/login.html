@@ -10,6 +10,23 @@
 	<body>
 		<h1>Portfolio Management</h1>
 		<p>Shoots flaming balls with reports</p>
+		<form id="userLoginForm">
+  <input type="text" name="username" placeholder="Username">
+      <input type="password" name="password" placeholder="Password">
+  <input type="submit" value="Log In">
+</form>
+
+<script src={{ url_for('static', filename="js/jquery-3.6.4.js") }}></script>
+		<script src={{ url_for('static', filename="js/bootstrap.js") }}></script>
 		
+		<script>
+			// Attach a submit handler to the form
+$( "#userLoginForm" ).submit(function( event ) {
+    // Stop form from submitting normally
+  event.preventDefault();
+  alert("Working!");
+    });
+			
+		</script>
 	</body>
 </html>
