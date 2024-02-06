@@ -22,8 +22,10 @@ session = Session()
 def create_first_admin():
     # this returns int
     user_count = session.query(User).count()
-    
-    return str(user_count)
+    if user_count > 0:
+        return "Admin already existed"
+    else:
+        return "Create default admin creds here"
 
 @app.route('/admin/login', methods=['GET'])
 def admin_login():
