@@ -2,3 +2,4 @@ Flask
 flask_sqlalchemy
 sqlalchemy_utils
 sqlalchemy
+psycopg2
