@@ -12,3 +12,4 @@ class Project(Base):
     date_updated = Column(DateTime(timezone=True), default=func.now())
     project_name = Column(String(150), nullable=False, unique=True)
     project_link = Column(String(300), nullable=True, unique=False)
+    project_desc = Column(String(500), nullable=True, unique=False)
