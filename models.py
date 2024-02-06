@@ -1,5 +1,5 @@
 from app import db
-from sqlalchemy import func, select
+from sqlalchemy import *
 from sqlalchemy.orm import declarative_base
 
 Base = declarative_base()
@@ -7,8 +7,8 @@ Base = declarative_base()
 class Project(Base):
     __tablename__ = "projects"
     
-    id = db.Column(db.Integer,     nullable=False, unique=True, primary_key=True)
-    date_created = db.Column(db.DateTime(timezone=True), default=func.now())
-    date_updated = db.Column(db.DateTime(timezone=True), default=func.now())
-    project_name = db.Column(db.String(150), nullable=False, unique=True)
-    project_link = db.Column(db.String(300), nullable=True, unique=False)
+    id = Column(Integer,     nullable=False, unique=True, primary_key=True)
+    date_created = Column(db.DateTime(timezone=True), default=func.now())
+    date_updated = Column(DateTime(timezone=True), default=func.now())
+    project_name = Column(String(150), nullable=False, unique=True)
+    project_link = Column(String(300), nullable=True, unique=False)
