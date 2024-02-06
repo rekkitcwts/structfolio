@@ -21,7 +21,7 @@ session = Session()
 @app.route('/admin/start', methods=['GET'])
 def create_first_admin():
     count = session.query(User).with_entities(func.count()).scalar()
-    return count
+    return type(count)
 
 @app.route('/admin/login', methods=['GET'])
 def admin_login():
