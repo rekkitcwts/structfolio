@@ -25,6 +25,12 @@ def create_first_admin():
     if user_count > 0:
         return "Admin already existed"
     else:
+        default_admin = User(username = "admin")
+        # change this later
+        default_pass = "admin"
+        default_admin.hash_password(default_pass)
+        session.add(default_admin)
+        session.commit()
         return "Create default admin creds here"
 
 @app.route('/admin/login', methods=['GET'])
