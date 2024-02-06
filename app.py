@@ -12,6 +12,11 @@ db = create_engine(connection_str)
 from models import *
 
 Project.metadata.create_all(db)
+Users.metadata.create_all(db)
+
+@app.route('/admin/start', methods=['GET'])
+def create_first_admin():
+    return "start admin"
 
 @app.route('/admin/login', methods=['GET'])
 def admin_login():
