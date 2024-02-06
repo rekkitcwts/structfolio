@@ -35,7 +35,7 @@ def create_first_admin():
 
 @app.route('/admin/login', methods=['GET'])
 def admin_login():
-    return "login_page"
+    return render_template('login.html', title="Portfolio Management")
 	
 @app.route('/admin', methods=['GET'])
 def admin_projects_list():
