@@ -3,3 +3,4 @@ flask_sqlalchemy
 sqlalchemy_utils
 sqlalchemy
 psycopg2-binary
+passlib
