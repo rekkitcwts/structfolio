@@ -6,3 +6,4 @@ psycopg2-binary
 passlib
 itsdangerous
 PyJWT
+flask_httpauth
