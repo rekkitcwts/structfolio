@@ -13,6 +13,14 @@ from models import *
 
 Project.metadata.create_all(db)
 
+@app.route('/admin/login', methods=['GET'])
+def admin_login():
+    return "login_page"
+	
+@app.route('/admin', methods=['GET'])
+def admin_projects_list():
+    return "Observing"
+
 @app.route('/', methods=['GET'])
 def home():
     return render_template('main.html', title="Portfolio - Dynse Clyde Sacote")
