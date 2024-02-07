@@ -28,7 +28,7 @@ $( "#userLoginForm" ).submit(function( event ) {
   var $form = $( this ),
     username = $form.find( "input[name='username']" ).val(),
     password = $form.find( "input[name='password']" ).val(),
-    url = "{{ url_for('api/admin/login') }}";
+    url = "{{ url_for('api_admin_login') }}";
   alert($form);
     });
 			
