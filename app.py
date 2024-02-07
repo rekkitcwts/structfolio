@@ -35,7 +35,7 @@ def create_first_admin():
 
 @app.route('/api/admin/login', methods=['POST'])
 def api_admin_login():
-    return "JSON with token"
+    return jsonify({ 'hoie': "JSON with token"})
 
 @app.route('/admin/login', methods=['GET'])
 def admin_login():
