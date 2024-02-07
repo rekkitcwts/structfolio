@@ -35,7 +35,19 @@ $( "#userLoginForm" ).submit(function( event ) {
         pass: password
     };
     
-  alert(JSON.stringify(dataToSend));
+  //alert(JSON.stringify(dataToSend));
+  
+  $.ajax({
+    type: "POST",
+    url: url,
+    data: dataToSend,
+    dataType:"json",
+    success: function(response){
+        //if request if made successfully then the response represent the data
+        alert(response);
+    }
+  });
+  
     });
 			
 		</script>
