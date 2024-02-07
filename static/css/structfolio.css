@@ -10,6 +10,10 @@
     color: #FFFFFF;
 }
 
+h1 {
+	font-family: 'Protest Riot';
+}
+
 /* H1 - header with colored background */
 .parallel-header {
 	background: #0047A0;
