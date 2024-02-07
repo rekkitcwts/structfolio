@@ -24,7 +24,12 @@
 $( "#userLoginForm" ).submit(function( event ) {
     // Stop form from submitting normally
   event.preventDefault();
-  alert("Working!");
+  
+  var $form = $( this ),
+    username = $form.find( "input[name='username']" ).val(),
+    password = $form.find( "input[name='password']" ).val(),
+    url = "{{ url_for('api/admin/login') }}";
+  alert($form);
     });
 			
 		</script>
