@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{{ title }}</title>
+		<link type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
+		<link type="text/css" href="{{ url_for('static', filename='css/structfolio.css') }}" rel="stylesheet">
+	</head>
+	<body>
+		<h1>Portfolio Management</h1>
+		<p>Shoots flaming balls with reports</p>
+		<form id="userLoginForm">
+  <input type="text" name="username" placeholder="Username">
+      <input type="password" name="password" placeholder="Password">
+  <input type="submit" value="Log In">
+</form>
+
+<script src={{ url_for('static', filename="js/jquery-3.6.4.js") }}></script>
+		<script src={{ url_for('static', filename="js/bootstrap.js") }}></script>
+		
+		<script>
+			// Attach a submit handler to the form
+$( "#userLoginForm" ).submit(function( event ) {
+    // Stop form from submitting normally
+  event.preventDefault();
+  
+  var $form = $( this ),
+    username = $form.find( "input[name='username']" ).val(),
+    password = $form.find( "input[name='password']" ).val(),
+    url = "{{ url_for('api_admin_login') }}";
+    
+    dataToSend = {
+        user: username,
+        pass: password
+    };
+    
+  //alert(JSON.stringify(dataToSend));
+  
+  $.ajax({
+    type: "POST",
+    url: url,
+    data: dataToSend,
+    dataType:"json",
+    success: function(response){
+        //if request if made successfully then the response represent the data
+        alert(JSON.stringify(response));
+    }
+  });
+  
+    });
+			
+		</script>
+	</body>
+</html>

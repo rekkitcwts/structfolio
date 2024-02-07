@@ -6,6 +6,9 @@
 		<title>{{ title }}</title>
 		<link type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
 		<link type="text/css" href="{{ url_for('static', filename='css/structfolio.css') }}" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Protest Riot' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -15,7 +18,7 @@
   <a class="navbar-brand" href="#">
         <img src="{{ url_for('static', filename='img/logo.png') }}" width="227" height="60" alt="Portfolio Logo">
 </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+<!--  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -40,7 +43,7 @@
         </div>
       </li>
     </ul>
-  </div>
+  </div> -->
 </nav>
 		
 		     </div> <!-- end col-lg-12 -->
@@ -52,6 +55,19 @@
 </div>
 		{% block content %}
 		{% endblock %}
+		
+	<!-- Footer -->
+<footer class="page-footer font-small blue">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center">© 2024 
+    <a href="/"> Dynse Clyde Sacote</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+		
 		
 		<script src={{ url_for('static', filename="js/jquery-3.6.4.js") }}></script>
 		<script src={{ url_for('static', filename="js/bootstrap.js") }}></script>
