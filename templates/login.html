@@ -30,11 +30,12 @@ $( "#userLoginForm" ).submit(function( event ) {
     password = $form.find( "input[name='password']" ).val(),
     url = "{{ url_for('api_admin_login') }}";
     
+    dataToSend = {
+        user: username,
+        pass: password
+    };
     
-  //alert(JSON.stringify($form));
-  alert(url);
-  alert(username);
-  alert(password);
+  alert(JSON.stringify(dataToSend));
     });
 			
 		</script>
