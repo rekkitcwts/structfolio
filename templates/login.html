@@ -29,7 +29,7 @@ $( "#userLoginForm" ).submit(function( event ) {
     username = $form.find( "input[name='username']" ).val(),
     password = $form.find( "input[name='password']" ).val(),
     url = "{{ url_for('api_admin_login') }}";
-  alert($form);
+  alert(JSON.stringify($form));
     });
 			
 		</script>
