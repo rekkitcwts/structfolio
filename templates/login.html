@@ -44,7 +44,7 @@ $( "#userLoginForm" ).submit(function( event ) {
     dataType:"json",
     success: function(response){
         //if request if made successfully then the response represent the data
-        alert(response);
+        alert(JSON.stringify(response));
     }
   });
   
